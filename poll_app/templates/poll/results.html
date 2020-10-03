@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="contain">
+        <div class="card">
+            <div class="card-header">Poll Results</div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-12 h2 p-4">{{ poll.question }}</div>
+                        
+                    </div>
+                </li>
+                {% for x,y in items %}
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-12 px-2">{{ x }} -- <strong>{{ y }}</strong></div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="card-footer"><strong> Total -- {{ poll.total }} </strong></div>
+        </div>
+    </div>
+
+{% endblock %}

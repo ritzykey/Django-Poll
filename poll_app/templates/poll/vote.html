@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="contain">
+        <div class="card">
+            <div class="card-header">Cast Your Vote</div>
+            <div class="h2 p-4">{{ poll.question }}</div>
+            <div class="p-4">
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for i in options %}
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label active" for="inlineRadio1"><input checked="" class="form-check-input" type="radio" name="poll" id="{{ i }}" value="{{ i }}">{{ i }}</label>
+                    </div>
+                    {% endfor %}
+                    <hr>
+                    <div class="pl-4">
+                        <input class="btn btn-primary" type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
